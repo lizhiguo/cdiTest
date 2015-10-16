@@ -28,8 +28,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @ApplicationScoped
@@ -52,6 +52,6 @@ public class EntityManagerProducer {
 	
 	@Produces
 	public Logger produceLog(InjectionPoint injectionPoint) {
-		return LogManager.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+		return LoggerFactory.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
 	}
 }

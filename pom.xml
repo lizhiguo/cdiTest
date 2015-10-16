@@ -14,7 +14,7 @@
 		<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 		<version.jboss.spec.javaee.7.0>1.0.3.Final</version.jboss.spec.javaee.7.0>
 		<ds.version>1.5.1-SNAPSHOT</ds.version>
-		<log4j2.version>2.4</log4j2.version>
+		<log4j2.version>2.4.1</log4j2.version>
 		<weld.version>2.3.0.Final</weld.version>
 		<owb.version>1.5.0</owb.version>
 		<javaee-api.version>7.0</javaee-api.version>
@@ -55,6 +55,22 @@
 			<version>${ds.version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- 添加mybatis的核心包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-cdi</artifactId>
+			<version>1.0.0-beta2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.0.0</version>
+		</dependency>
 		<!-- LOG -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -64,6 +80,11 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>${log4j2.version}</version>
 		</dependency>
 		<!-- test -->
@@ -157,10 +178,8 @@
 			</dependencyManagement>
 
 			<dependencies>
-				<!-- <dependency>
-					<groupId>javax.enterprise</groupId>
-					<artifactId>cdi-api</artifactId>
-				</dependency> -->
+				<!-- <dependency> <groupId>javax.enterprise</groupId> <artifactId>cdi-api</artifactId> 
+					</dependency> -->
 				<dependency>
 					<groupId>javax</groupId>
 					<artifactId>javaee-api</artifactId>
